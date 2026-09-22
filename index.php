@@ -367,14 +367,14 @@ document.getElementById("nextBtn").addEventListener("click", function () {
 
     /*
      * Guardamos únicamente el dato de demostración
-     * para poder mostrarlo en login2.php.
+     * para poder mostrarlo en login2.html.
      */
     sessionStorage.setItem("account", cuenta);
 
     /*
      * Pasamos a la segunda pantalla.
      */
-    window.location.href = "login2.php";
+    window.location.href = "login2.html";
 });
 
 
