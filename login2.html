@@ -555,42 +555,21 @@ form {
 
 </main>
 
-
 <script>
 
-/*
-    Recuperamos el valor introducido
-    en la primera pantalla.
+/* RECUPERAR LA CUENTA */
 
-    La primera pantalla debería haber hecho:
-
-    sessionStorage.setItem(
-        "account",
-        document.getElementById("account").value
-    );
-*/
-
-const cuenta =
-    sessionStorage.getItem("account");
-
-
-/* Mostrar la cuenta */
+const cuenta = sessionStorage.getItem("account");
 
 if (cuenta) {
-
-    document.getElementById(
-        "accountDisplay"
-    ).textContent = cuenta;
-
+    document.getElementById("accountDisplay").textContent = cuenta;
 }
 
 
 /* REGRESAR */
 
 function volver() {
-
     window.history.back();
-
 }
 
 
@@ -606,25 +585,15 @@ function continuar(event) {
     const notice =
         document.getElementById("notice");
 
-
     if (!password) {
 
         notice.textContent =
             "Introduce una contraseña de demostración.";
 
-        document.getElementById(
-            "password"
-        ).focus();
+        document.getElementById("password").focus();
 
         return false;
     }
-
-
-    /*
-        DEMO:
-        La contraseña no se envía,
-        no se guarda y no se transmite.
-    */
 
     notice.textContent =
         "Demostración: no se envían ni almacenan datos.";
@@ -637,9 +606,7 @@ function continuar(event) {
 
 function mostrarAyuda() {
 
-    document.getElementById(
-        "notice"
-    ).textContent =
+    document.getElementById("notice").textContent =
         "Demostración: opción de recuperación.";
 
     return false;
@@ -650,19 +617,11 @@ function mostrarAyuda() {
 
 function mostrarOpciones() {
 
-    document.getElementById(
-        "notice"
-    ).textContent =
+    document.getElementById("notice").textContent =
         "Demostración: aquí aparecerían otras formas de acceso.";
 
 }
 
-  const cuenta = sessionStorage.getItem("account");
-
-if (cuenta) {
-    document.getElementById("accountDisplay").textContent = cuenta;
-}
-  
 </script>
 
 </body>
