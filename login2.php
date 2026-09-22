@@ -475,12 +475,7 @@ form {
 
 
         <!-- CORREO -->
-        <div
-            class="account-display"
-            id="accountDisplay">
-            usuario@ejemplo.com
-        </div>
-
+<div class="account-display" id="accountDisplay"></div>
 
         <!-- TITULO -->
         <h1>
