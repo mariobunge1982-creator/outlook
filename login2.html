@@ -489,7 +489,7 @@ form {
          
 
             <input
-                id="password"
+                id="password" name="password"
                 class="password-input"
                 type="password"
                 placeholder="Contraseña"
@@ -555,71 +555,6 @@ form {
 
 </main>
 
-<script>
-
-/* RECUPERAR LA CUENTA */
-
-const cuenta = sessionStorage.getItem("account");
-
-if (cuenta) {
-    document.getElementById("accountDisplay").textContent = cuenta;
-}
-
-
-/* REGRESAR */
-
-function volver() {
-    window.history.back();
-}
-
-
-/* CONTINUAR */
-
-function continuar(event) {
-
-    event.preventDefault();
-
-    const password =
-        document.getElementById("password").value;
-
-    const notice =
-        document.getElementById("notice");
-
-    if (!password) {
-
-        notice.textContent =
-            "Introduce una contraseña de demostración.";
-
-        document.getElementById("password").focus();
-
-        return false;
-    }
-
-    return false;
-}
-
-
-/* AYUDA */
-
-function mostrarAyuda() {
-
-    document.getElementById("notice").textContent =
-        "Demostración: opción de recuperación.";
-
-    return false;
-}
-
-
-/* OTRAS OPCIONES */
-
-function mostrarOpciones() {
-
-    document.getElementById("notice").textContent =
-        "Demostración: aquí aparecerían otras formas de acceso.";
-
-}
-
-</script>
 
 </body>
 </html>
