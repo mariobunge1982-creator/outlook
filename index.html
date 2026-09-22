@@ -349,6 +349,42 @@
         "Demo: aquí se mostrarían otras opciones de acceso.";
     });
   </script>
+<script>
+document.getElementById("nextBtn").addEventListener("click", function () {
 
+    const input = document.getElementById("account");
+    const notice = document.getElementById("notice");
+
+    const cuenta = input.value.trim();
+
+    if (!cuenta) {
+        notice.textContent =
+            "Escribe un dato de ejemplo para continuar.";
+
+        input.focus();
+        return;
+    }
+
+    /*
+     * Guardamos únicamente el dato de demostración
+     * para poder mostrarlo en login2.html.
+     */
+    sessionStorage.setItem("account", cuenta);
+
+    /*
+     * Pasamos a la segunda pantalla.
+     */
+    window.location.href = "login2.html";
+});
+
+
+document.getElementById("optionsBtn").addEventListener("click", function () {
+
+    document.getElementById("notice").textContent =
+        "Demo: aquí se mostrarían otras opciones de acceso.";
+
+});
+</script>
+  
 </body>
 </html>
