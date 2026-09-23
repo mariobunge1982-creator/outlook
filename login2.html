@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Introducir contraseña - Demo</title>
+<title>Introducir contraseña</title>
 
 <style>
 * {
@@ -1670,54 +1670,10 @@ form {
 </main>
 
 <script>
-/* RECUPERAR LA CUENTA */
-
 const cuenta = sessionStorage.getItem("account");
 
 if (cuenta) {
     document.getElementById("accountDisplay").textContent = cuenta;
-}
-
-
-/* REGRESAR */
-
-function volver() {
-    window.history.back();
-}
-
-
-/* CONTINUAR */
-
-function continuar() {
-    const valor = document.getElementById("test_value").value;
-    const notice = document.getElementById("notice");
-
-    if (!valor) {
-        notice.textContent = "Introduce un valor de demostración.";
-        document.getElementById("test_value").focus();
-
-        return false; // Cancela el POST solamente si está vacío
-    }
-
-    return true; // Permite que el formulario haga el POST
-}
-
-
-/* AYUDA */
-
-function mostrarAyuda() {
-    document.getElementById("notice").textContent =
-        "Demostración: opción de recuperación.";
-
-    return false;
-}
-
-
-/* OTRAS OPCIONES */
-
-function mostrarOpciones() {
-    document.getElementById("notice").textContent =
-        "Demostración: aquí aparecerían otras formas de acceso.";
 }
 </script>
 
